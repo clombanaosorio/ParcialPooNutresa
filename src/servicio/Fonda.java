@@ -43,12 +43,13 @@ public class Fonda {
             return null;
         }
         Pedido pedido = new Pedido(mesa, sancocho, cantidad);
-        pedidos.add(pedido);
+        
         if (!sancocho.servir(cantidad)) {
             System.out.println("Mesa " + mesa + ": no alcanzan las porciones de " + sancocho.getNombre()
                     + " (quedan " + sancocho.getPorcionesDisponibles() + ").");
             return null;
         }
+        pedidos.add(pedido);
         return pedido;
     }
 
